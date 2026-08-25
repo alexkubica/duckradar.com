@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="duckradar-capture" content="sanitized-reddit-html"></head>
+<body>
+<shreddit-post id="t3_1tfs3so" post-title="How to build a custom SEO dashboard with raw data API without the $500 monthly enterprise tax?" subreddit-name="bigseo" subreddit-prefixed-name="r/bigseo" content-href="https://www.reddit.com/r/bigseo/comments/1tfs3so/how_to_build_a_custom_seo_dashboard_with_raw_data/" permalink="/r/bigseo/comments/1tfs3so/how_to_build_a_custom_seo_dashboard_with_raw_data/" author="NPC_Boiii" created-timestamp="2026-05-17T15:07:06.455000+0000" score="63" comment-count="58">
+<div id="t3_1tfs3so-post-rtjson-content"><p>I have been looking into ways to cut down our monthly software overhead because the enterprise pricing for the big SEO platforms is just getting ridiculous. We are basically paying for a lot of features we never touch just to get API access. I am considering building a custom SEO dashboard with raw data API instead of staying on a fixed subscription. I noticed DataForSEO has a pay as you go option which seems like it would be much cheaper for our scale, but I have never built a reporting stack from scratch like this. Has anyone here moved to a setup like this recently? I am curious if it is actually easy to manage the data flow or if it ends up being a nightmare to keep the dashboard updated. I would love to hear any pros or cons from people who have ditched the big tools to build their own reporting.</p></div>
+</shreddit-post>
+<shreddit-comment thingid="t1_ombiu55" author="chinitwoo" permalink="/r/bigseo/comments/1tfs3so/comment/ombiu55/" created="2026-05-17T15:16:31.113000+0000" score="7">
+<div id="t1_ombiu55-comment-rtjson-content"><p>If you are managing a lot of clients it is definitely worth the effort. We switched because we wanted to create our own proprietary scores instead of just showing the same numbers every other agency shows.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc22m7" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omc22m7/" created="2026-05-17T16:51:52.368000+0000" score="2">
+<div id="t1_omc22m7-comment-rtjson-content"><p>Exactly. I want our reports to look different from the standard templates everyone else uses.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombtqrf" author="Sams_Antics" permalink="/r/bigseo/comments/1tfs3so/comment/ombtqrf/" created="2026-05-17T16:10:06.166000+0000" score="5">
+<div id="t1_ombtqrf-comment-rtjson-content"><p>Have Codex or Claude Code build it for you. DataForSEO is probably the cheapest option.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omh8r7s" author="EarnieEarns" permalink="/r/bigseo/comments/1tfs3so/comment/omh8r7s/" created="2026-05-18T13:15:13.338000+0000" score="2">
+<div id="t1_omh8r7s-comment-rtjson-content"><p>This was my first thought. I would find a static “dashboard” template that’s really close to what I want, then connect the files to Claude code and Codex and start chipping away at it.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombumew" author="iambatman_2006" permalink="/r/bigseo/comments/1tfs3so/comment/ombumew/" created="2026-05-17T16:14:30.081000+0000" score="3">
+<div id="t1_ombumew-comment-rtjson-content"><p>The part to plan carefully is historical data. Pulling fresh data into a dashboard is one thing. Storing it cleanly, comparing changes over time and avoiding duplicate or missing rows is where the reporting stack starts to matter.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombobps" author="Letter_2" permalink="/r/bigseo/comments/1tfs3so/comment/ombobps/" created="2026-05-17T15:43:31.511000+0000" score="2">
+<div id="t1_ombobps-comment-rtjson-content"><p>The main benefit of a custom setup is that you can mix and match data from different sources without the platform limits. It makes reporting feel a lot more flexible.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombsy41" author="swaryapatil14" permalink="/r/bigseo/comments/1tfs3so/comment/ombsy41/" created="2026-05-17T16:06:10.517000+0000" score="2">
+<div id="t1_ombsy41-comment-rtjson-content"><p>Custom works best when your reporting needs are narrow and repeatable.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombt48z" author="ConstructionClear142" permalink="/r/bigseo/comments/1tfs3so/comment/ombt48z/" created="2026-05-17T16:07:00.847000+0000" score="2">
+<div id="t1_ombt48z-comment-rtjson-content"><p>Cost savings look better when the scope stays boring.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombtinr" author="WarPsychological1377" permalink="/r/bigseo/comments/1tfs3so/comment/ombtinr/" created="2026-05-17T16:08:59.793000+0000" score="2">
+<div id="t1_ombtinr-comment-rtjson-content"><p>Raw data is cheaper but it also gives you more responsibility.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc4wte" author="jasonmcgovern" permalink="/r/bigseo/comments/1tfs3so/comment/omc4wte/" created="2026-05-17T17:05:35.268000+0000" score="2">
+<div id="t1_omc4wte-comment-rtjson-content"><p>what are your kpis and goals?</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombjgoj" author="JoePatowski" permalink="/r/bigseo/comments/1tfs3so/comment/ombjgoj/" created="2026-05-17T15:19:37.185000+0000" score="1">
+<div id="t1_ombjgoj-comment-rtjson-content"><p>So this is easier than you think, but harder than just a prompt. I’ve built something for our company using the dataforseo and we moved away from semrush… which is absolutely outrageous for api usage. $499 a month just to get the option of buying credits. Anyways, this can be completely done with Claude Code. Will require you getting some things like supabase credentials, apikey for dataforseo, resend if you’re sending emails with updates, ai api key if you’re sending any data to an llm, etc. So yes it can be done with Claude code and you can get as advanced as you want to with it, which i really love.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombqap2" author="Typical-Skill-3724" permalink="/r/bigseo/comments/1tfs3so/comment/ombqap2/" created="2026-05-17T15:53:10.993000+0000" score="1">
+<div id="t1_ombqap2-comment-rtjson-content"><p>The anxiety of a huge monthly bill is real when you are trying to scale. Moving to pay as you go sounds like a much better way to manage cash flow.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc26lr" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omc26lr/" created="2026-05-17T16:52:23.800000+0000" score="1">
+<div id="t1_omc26lr-comment-rtjson-content"><p>Thanks. I am hoping it gives us a bit more breathing room on the accounting side.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombsirf" author="Gisela_Allen" permalink="/r/bigseo/comments/1tfs3so/comment/ombsirf/" created="2026-05-17T16:04:02.404000+0000" score="1">
+<div id="t1_ombsirf-comment-rtjson-content"><p>Do not underestimate QA.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombuw1y" author="Sea_Appointment5292" permalink="/r/bigseo/comments/1tfs3so/comment/ombuw1y/" created="2026-05-17T16:15:51.433000+0000" score="1">
+<div id="t1_ombuw1y-comment-rtjson-content"><p>Dashboard updates are easy when the schema is clean.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombuz82" author="Proud_Can_6176" permalink="/r/bigseo/comments/1tfs3so/comment/ombuz82/" created="2026-05-17T16:16:17.901000+0000" score="1">
+<div id="t1_ombuz82-comment-rtjson-content"><p>The biggest win is usually controlling the output format.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombv8er" author="ProofLeast9846" permalink="/r/bigseo/comments/1tfs3so/comment/ombv8er/" created="2026-05-17T16:17:36.012000+0000" score="1">
+<div id="t1_ombv8er-comment-rtjson-content"><p>Start with the recurring report that annoys you most. Rebuild only that workflow with API data and see whether it actually saves time. That is a better test than trying to design the perfect SEO dashboard upfront.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc32cz" author="Hatorate90" permalink="/r/bigseo/comments/1tfs3so/comment/omc32cz/" created="2026-05-17T16:56:37.941000+0000" score="1">
+<div id="t1_omc32cz-comment-rtjson-content"><p>Which data? Serp? Your own data? Check out bigquery</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omcbc5m" author="JTSwagMoney" permalink="/r/bigseo/comments/1tfs3so/comment/omcbc5m/" created="2026-05-17T17:37:14.408000+0000" score="1">
+<div id="t1_omcbc5m-comment-rtjson-content"><p>I&#x27;ve used d4seo API a ton for internal tools so yea it&#x27;s wayyyy cheaper than SEMrush. Accuracy, however... It&#x27;s acceptable for a cost savings.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omfg51r" author="Equivalent_Cover4542" permalink="/r/bigseo/comments/1tfs3so/comment/omfg51r/" created="2026-05-18T04:48:35.855000+0000" score="1">
+<div id="t1_omfg51r-comment-rtjson-content"><p>Version your queries if reports depend on them.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omfw876" author="Bubbly-Pause-5339" permalink="/r/bigseo/comments/1tfs3so/comment/omfw876/" created="2026-05-18T07:04:10.553000+0000" score="1">
+<div id="t1_omfw876-comment-rtjson-content"><p>We replaced our monthly client reporting with a dashboard like this using Claude Code. We build it into a skill, so we just type /monthly-report &quot;client&quot; and it&#x27;ll always load the exact same dashboard. The skill also fills the data into a Google Sheet for each client, so we have their historical data saved as well. We save the dashboard as a PDF and email it, since most clients still prefer that format, but you could turn this into a Claude Routine to update it daily if you want it more frequently. We pull in data from Ahrefs (since we already have a subscription and all plans have API access now), GSC, and Analytics + other client-specific metrics (lead forms submitted, revenue generated, etc.) DataForSEO also works well. I don&#x27;t use it for rank tracking because we already had everything setup in Ahrefs, but we use it for most of our KW research.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omgfd37" author="buttonMashr99" permalink="/r/bigseo/comments/1tfs3so/comment/omgfd37/" created="2026-05-18T09:59:22.402000+0000" score="1">
+<div id="t1_omgfd37-comment-rtjson-content"><p>We moved a chunk of reporting off the big suites last year. The API part is usually fine. The annoying part is normalizing the data and keeping historical consistency when providers change stuff quietly. If your reporting needs are pretty focused, the cost savings can be real.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omgr4mn" author="growth_pixel_academy" permalink="/r/bigseo/comments/1tfs3so/comment/omgr4mn/" created="2026-05-18T11:29:20.640000+0000" score="1">
+<div id="t1_omgr4mn-comment-rtjson-content"><p>A lot of people are moving this direction honestly, especially agencies that only need a specific subset of data. The tradeoff is usually lower cost and more flexibility vs. higher setup/maintenance responsibility. Building the dashboard is one thing keeping pipelines, normalization, quotas, and reporting stable long term is the part people often underestimate.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omgzcrf" author="DigitalHarbor_Ease" permalink="/r/bigseo/comments/1tfs3so/comment/omgzcrf/" created="2026-05-18T12:22:07.364000+0000" score="1">
+<div id="t1_omgzcrf-comment-rtjson-content"><p>We did something similar and honestly the API part was easier than expected the real work was cleaning the data and making the dashboard reliable over time. The big tools charge for convenience, not just data. If you already have someone comfortable with APIs + basic automation, building your own stack can save a lot. Just be ready: maintaining it becomes its own product once clients start depending on those reports.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omhk21y" author="ResponsibleCamera778" permalink="/r/bigseo/comments/1tfs3so/comment/omhk21y/" created="2026-05-18T14:13:09.271000+0000" score="1">
+<div id="t1_omhk21y-comment-rtjson-content"><p>Thanks. This is insightful o</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omhz097" author="sundios" permalink="/r/bigseo/comments/1tfs3so/comment/omhz097/" created="2026-05-18T15:22:37.686000+0000" score="1">
+<div id="t1_omhz097-comment-rtjson-content"><p>I built one some time ago, it’s open source and you just need to add your api keys in the settings. https://github.com/sundios/SEO-Dashboard</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omibjw6" author="TheCuriousFish" permalink="/r/bigseo/comments/1tfs3so/comment/omibjw6/" created="2026-05-18T16:19:49.303000+0000" score="1">
+<div id="t1_omibjw6-comment-rtjson-content"><p>just a tip for dashboard design i used claude design to set it up, once happy then started building with claude also DataforSeo works well</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omkplh5" author="theycallmebeezer" permalink="/r/bigseo/comments/1tfs3so/comment/omkplh5/" created="2026-05-18T23:37:38.506000+0000" score="1">
+<div id="t1_omkplh5-comment-rtjson-content"><p>I had a need for a unique SEO tool come up myself just last week. Ventured in Claude Cowork/Code and had it build it out in an afternoon. I&#x27;m floored that it works as well as it does. And yes, I used DataForSEO as the backend after it provided quite comparable results to Google&#x27;s Keyword Planner. I don&#x27;t know if your need is as robust as mine is, but I&#x27;m thrilled with DataForSEO&#x27;s pay as you go option. 50 bucks on DataFor SEO could last me the whole year with my use-case.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ommpx69" author="tldrseo" permalink="/r/bigseo/comments/1tfs3so/comment/ommpx69/" created="2026-05-19T07:41:20.874000+0000" score="1">
+<div id="t1_ommpx69-comment-rtjson-content"><p>I did exactly this about 2 months ago and haven&#x27;t looked back. My setup: GA4 Data API + Search Console API feeding into a custom PHP dashboard hosted on a $5/month shared server. For rank tracking I use SerproBot which runs about $30/month depending on how many keywords you track. Total cost is maybe $35/month. The data flow is honestly not that bad once you get it running. GA4&#x27;s API is free within normal usage limits. GSC API is the same. The main upfront work is auth, service account setup, making sure you have the right permissions on each property, but once that&#x27;s done it just runs. The real benefit no one mentions is that you build exactly what matters to your clients. I track organic sessions by content vertical, YoY comparisons, conversion attribution by landing page. Stuff that would require 3 different reports in a traditional tool and a lot of clicking around. Here it&#x27;s one page. The maintenance question, in 2 months I&#x27;ve had to touch it maybe 3 times. Mostly adding new metrics a client asked for, not fixing broken things. It handled all the actual code, connected directly to my FTP and to the client&#x27;s private dashboard, so modifications have been really easy. The dev barrier is much lower than you&#x27;d think.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omoc39e" author="digitaldreamsvibes" permalink="/r/bigseo/comments/1tfs3so/comment/omoc39e/" created="2026-05-19T14:18:04.851000+0000" score="1">
+<div id="t1_omoc39e-comment-rtjson-content"><p>I can help you to build and deploy your SEO platform</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omtenci" author="NineSidedBox" permalink="/r/bigseo/comments/1tfs3so/comment/omtenci/" created="2026-05-20T06:20:07.530000+0000" score="1">
+<div id="t1_omtenci-comment-rtjson-content"><p>Have you looked at OpenSEO ( https://github.com/every-app/open-seo ), it seems exactly what you described. Also connects to DataForSEO for all the data.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_onehr4o" author="Carry_singer" permalink="/r/bigseo/comments/1tfs3so/comment/onehr4o/" created="2026-05-23T09:46:39.374000+0000" score="1">
+<div id="t1_onehr4o-comment-rtjson-content"><p>I build something using data for seo api n claude code. Its really effective.. I tested various scenerios n also compared with ahrefs, it has accuracy. Still early phase but definetly its shaping well.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_ombv8ky" author="LaRueee" permalink="/r/bigseo/comments/1tfs3so/comment/ombv8ky/" created="2026-05-17T16:17:37.326000+0000" score="1">
+<div id="t1_ombv8ky-comment-rtjson-content"><p>Those enterprise platform prices are getting pretty insane. It feels like you are paying for the brand name more than the actual utility.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc1n9c" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omc1n9c/" created="2026-05-17T16:49:47.308000+0000" score="1">
+<div id="t1_omc1n9c-comment-rtjson-content"><p>Right. It is hard to justify when the core data is what actually matters for the clients.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc1xm8" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omc1xm8/" created="2026-05-17T16:51:12.333000+0000" score="3">
+<div id="t1_omc1xm8-comment-rtjson-content"><p>I am expecting some bumps in the road. Just hoping it is not a total nightmare to maintain.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omh715b" author="watsonL1F7" permalink="/r/bigseo/comments/1tfs3so/comment/omh715b/" created="2026-05-18T13:05:59.193000+0000" score="1">
+<div id="t1_omh715b-comment-rtjson-content"><p>Yeah this is the part nobody mentions. The API itself is usually fine, what gets you is everything you didn&#x27;t realize the SaaS was doing on top. Stuff like dedupe across SERP feature variations, position normalization when AI Overviews push organic down, retry logic on 30s timeouts. We hit a wall around month 2 because our rank tracker started producing weird gaps. Turned out DataForSEO was returning AIO blocks as position 0 in some payloads and nothing in others. Spent a week writing reconciliation logic that Ahrefs basically does invisibly. Budget at least 2x your initial time estimate for the normalization layer, that&#x27;s where the trial and error really shows up.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omc1sc6" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omc1sc6/" created="2026-05-17T16:50:29.314000+0000" score="1">
+<div id="t1_omc1sc6-comment-rtjson-content"><p>That is good to hear. Was the initial setup time significant or did you get it running pretty quickly?</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omh3i0u" author="bigseo-ModTeam" permalink="/r/bigseo/comments/1tfs3so/comment/omh3i0u/" created="2026-05-18T12:46:31.886000+0000" score="1">
+<div id="t1_omh3i0u-comment-rtjson-content"><p>BigSEO is a zero tolerance zone for promotion and sales. Offers of services (sale or free), for hire posts, link-exchange or guest posting is not permitted. Affiliate links are not allowed. No prospecting for work of any kind. No &quot;free tools&quot; or beta tests. No requesting DMs. No &quot;I cannot share it here but you can DM me!&quot; We don&#x27;t care about your ProductHunt launch.</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omg68of" author="NPC_Boiii" permalink="/r/bigseo/comments/1tfs3so/comment/omg68of/" created="2026-05-18T08:36:00.005000+0000" score="1">
+<div id="t1_omg68of-comment-rtjson-content"><p>Thanks, this helps. Would you start with SERP and keyword data first before adding backlinks?</p></div>
+</shreddit-comment>
+<shreddit-comment thingid="t1_omh35ox" author="bigseo-ModTeam" permalink="/r/bigseo/comments/1tfs3so/comment/omh35ox/" created="2026-05-18T12:44:32.878000+0000" score="1">
+<div id="t1_omh35ox-comment-rtjson-content"><p>Astroturfing for brands is not tolerated.</p></div>
+</shreddit-comment>
+</body>
+</html>

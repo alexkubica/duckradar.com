@@ -1,0 +1,13 @@
+.DS_Store
+.worktrees/
+.superpowers/
+.venv/
+site/.vercel/
+.tmp/
+data/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+private/

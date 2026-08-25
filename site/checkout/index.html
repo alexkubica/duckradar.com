@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout | DuckRadar</title>
+    <meta
+      name="description"
+      content="Start a DuckRadar monthly site subscription."
+    />
+    <link rel="icon" href="../assets/favicon.svg?v=4" sizes="any" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="../">
+          <img class="brand-logo" src="../assets/logo.svg" alt="" />
+          <span>DuckRadar</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="../pricing/">Pricing</a>
+          <a href="../sample-report/">Sample</a>
+          <a href="../terms/">Terms</a>
+          <a href="../privacy/">Privacy</a>
+          <a class="nav-cta" href="mailto:support@duckradar.com?subject=Checkout%20help">Help</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="legal-main">
+      <article class="legal-page checkout-page">
+        <p class="meta">Checkout</p>
+        <h1>Start one DuckRadar site.</h1>
+        <p class="lede">
+          Start one client site for $49/mo. Paddle handles payment and subscription billing.
+        </p>
+
+        <div class="notice checkout-status" id="checkout-status" role="status">
+          Loading checkout...
+        </div>
+
+        <div class="checkout-summary" aria-label="Subscription summary">
+          <p class="price-label">Monthly subscription</p>
+          <p class="price"><strong>$49</strong><span>/ site / month</span></p>
+          <ul>
+            <li>One monthly client update for one subscribed site.</li>
+            <li>First update delivered within 5 business days after complete inputs.</li>
+            <li>Cancel future renewals anytime through Paddle or support.</li>
+            <li>No ranking guarantees or done-for-you marketing.</li>
+          </ul>
+        </div>
+
+        <button class="button button-dark checkout-button" id="checkout-button" type="button">
+          Start checkout
+        </button>
+
+        <p class="fine-print">
+          Need help? Email <a href="mailto:support@duckradar.com?subject=Checkout%20help">support@duckradar.com</a>.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div>
+          <strong>DuckRadar</strong><br />
+          Support: <a href="mailto:support@duckradar.com">support@duckradar.com</a>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../">Home</a>
+          <a href="../pricing/">Pricing</a>
+          <a href="../terms/">Terms</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../refund/">Refund Policy</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const paddleConfig = {
+        clientToken: "live_9935cf454da997fd3a738bc48cb", // gitleaks:allow -- browser client token
+        priceId: "pri_01krxnhd2dkf9a58fjx3tksqye",
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const transactionId = params.get("_ptxn") || params.get("transaction_id");
+      const statusEl = document.getElementById("checkout-status");
+      const checkoutButton = document.getElementById("checkout-button");
+
+      function setStatus(message, isError = false) {
+        statusEl.textContent = message;
+        statusEl.classList.toggle("checkout-error", isError);
+      }
+
+      function openCheckout() {
+        if (!window.Paddle) {
+          setStatus("Checkout could not load. Please refresh or contact support.", true);
+          return;
+        }
+
+        if (!paddleConfig.clientToken) {
+          setStatus("Checkout is being connected. Please contact support to start one site.", true);
+          return;
+        }
+
+        if (transactionId) {
+          Paddle.Checkout.open({
+            settings: {
+              displayMode: "overlay",
+              theme: "light",
+              locale: "en",
+              successUrl: "https://duckradar.com/onboarding/",
+            },
+            transactionId,
+          });
+          setStatus("Checkout is open.");
+          return;
+        }
+
+        if (!paddleConfig.priceId) {
+          setStatus("Checkout is being connected. Please contact support to start one site.", true);
+          return;
+        }
+
+        Paddle.Checkout.open({
+          settings: {
+            displayMode: "overlay",
+            theme: "light",
+            locale: "en",
+            successUrl: "https://duckradar.com/onboarding/",
+          },
+          items: [
+            {
+              priceId: paddleConfig.priceId,
+              quantity: 1,
+            },
+          ],
+        });
+        setStatus("Checkout is open.");
+      }
+
+      function initCheckout() {
+        if (!paddleConfig.clientToken) {
+          checkoutButton.textContent = "Email support";
+          checkoutButton.addEventListener("click", function fallbackToEmail(event) {
+            event.preventDefault();
+            window.location.href = "mailto:support@duckradar.com?subject=Start%20one%20site%20for%20%2449%2Fmo";
+          });
+          setStatus("Checkout page is ready. Add the Paddle client-side token before taking payments.", true);
+          return;
+        }
+
+        checkoutButton.addEventListener("click", openCheckout);
+
+        Paddle.Initialize({
+          token: paddleConfig.clientToken,
+        });
+
+        if (transactionId) {
+          setStatus("Opening Paddle checkout...");
+          openCheckout();
+        } else {
+          setStatus("Checkout ready.");
+        }
+      }
+
+      initCheckout();
+    </script>
+  </body>
+</html>
